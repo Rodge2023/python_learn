@@ -1,0 +1,24 @@
+# 自定义函数def
+import math
+# Prompt user to input values for a, b, and c
+a = int(input('a: '))
+b = int(input('b: '))
+c = int(input('c: '))
+
+def quadratic(a,b,c):
+#    if not isinstance(a, int) or not isinstance(b, int) or isinstance(c, int):
+#        raise TypeError('Please enter an integer.')
+    
+    z = math.sqrt(b**2 - 4*a*c)
+    if z < 0:
+        return 'This equation has no solution.'
+    elif a == 0:
+        return 'This is not a quadratic equation.'
+    else:
+        x1 = (-b + z)/(2*a)
+        x2 = (-b - z)/(2*a)
+        return x1, x2
+
+print(a,b,c)
+# Call function
+print(quadratic(a, b, c))
